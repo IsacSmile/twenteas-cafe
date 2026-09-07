@@ -2,49 +2,50 @@ import React from 'react';
 
 export const Founder: React.FC = () => {
   return (
-    <section id="founder" className="py-32 bg-[#1A110B] text-cream-100 relative hairline-b">
+    <section id="founder" className="py-32 bg-[#1A110B] text-cream-100 relative hairline-b overflow-hidden">
       
-      {/* Soft Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-amber-600/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* Soft Ambient Radial Lighting Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber-600/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         
-        {/* Section Pill Header */}
-        <div className="inline-flex items-center gap-2 mb-12">
-          <span className="w-6 h-[1px] bg-amber-500/50" />
+        {/* Section Header Line */}
+        <div className="inline-flex items-center gap-3 mb-12">
+          <span className="w-8 h-[1px] bg-amber-500/50" />
           <span className="text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
             Founder's Note
           </span>
-          <span className="w-6 h-[1px] bg-amber-500/50" />
+          <span className="w-8 h-[1px] bg-amber-500/50" />
         </div>
 
         {/* Founder Card Container */}
         <div className="flex flex-col items-center space-y-8">
           
-          {/* Softly Cropped Circular Portrait */}
+          {/* Founder Photo - Clean Soft-Cropped Frame with Amber Border */}
           <div className="relative group">
-            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border border-amber-500/30 p-1.5 bg-[#140D08] shadow-2xl transition-transform duration-500 group-hover:scale-105">
+            <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border border-amber-500/30 p-2 bg-[#140D08] shadow-2xl transition-transform duration-700 group-hover:scale-105">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                alt="Isac Smile - Founder of Twenteas"
-                className="w-full h-full object-cover rounded-full filter saturate-90"
+                src="/founder.jpg"
+                alt="Isac Smile - Founder of Twenteas Cafeteria"
+                className="w-full h-full object-cover object-top rounded-full filter saturate-[0.95]"
               />
             </div>
-            <div className="absolute -bottom-2 -right-2 bg-amber-600 text-coffee-950 p-2 rounded-full shadow-lg">
+            
+            <div className="absolute -bottom-1 -right-1 bg-amber-600 text-coffee-950 p-2 rounded-full shadow-xl">
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 21l3.52-.64C9.31 20.73 10.62 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
             </div>
           </div>
 
           {/* First-Person Personal Note */}
-          <blockquote className="font-serif-vintage text-2xl sm:text-3xl italic text-cream-100/90 max-w-2xl font-normal leading-relaxed text-balance">
+          <blockquote className="font-serif-vintage text-2xl sm:text-3xl lg:text-4xl italic text-cream-100/95 max-w-2xl font-normal leading-relaxed text-balance">
             “I wanted a place where the trees do the talking and the tea does the rest.”
           </blockquote>
 
-          {/* Signature & Role Block */}
-          <div className="space-y-1 pt-2">
-            <h3 className="font-serif-vintage text-xl sm:text-2xl text-amber-300 font-semibold tracking-wide">
+          {/* Founder Signature & Role Block */}
+          <div className="space-y-1.5 pt-2">
+            <h3 className="font-serif-vintage text-2xl sm:text-3xl text-amber-300 font-normal tracking-wide">
               Isac Smile
             </h3>
             <p className="text-xs uppercase tracking-[0.25em] text-cream-100/50 font-light font-sans">
@@ -52,8 +53,8 @@ export const Founder: React.FC = () => {
             </p>
           </div>
 
-          {/* Subtle Handwriting Signature Accent */}
-          <div className="pt-2 text-amber-400/60 font-handwriting text-2xl tracking-widest select-none">
+          {/* Subtle Handwritten Signature Accent */}
+          <div className="pt-1 text-amber-400/50 font-serif-vintage italic text-2xl tracking-widest select-none">
             Isac Smile
           </div>
 
