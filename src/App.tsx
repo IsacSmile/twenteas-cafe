@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Founder } from './components/Founder';
 import { Menu, MenuItem } from './components/Menu';
 import { Experience } from './components/Experience';
+import { Instagram } from './components/Instagram';
 import { Location } from './components/Location';
 import { Footer } from './components/Footer';
 import { MenuModal } from './components/MenuModal';
@@ -25,6 +26,7 @@ export function App() {
         <Founder />
         <Menu onSelectItem={(item) => setSelectedMenuItem(item)} />
         <Experience />
+        <Instagram />
         <Location />
       </main>
 
