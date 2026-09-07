@@ -108,7 +108,7 @@ export const Instagram: React.FC = () => {
           </div>
         </div>
 
-        {/* Pure Video Player Grid (Crops header & shows ONLY the video) */}
+        {/* Pure Video Player Grid (Crops header & footer so ONLY video shows) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {INSTAGRAM_POSTS.map((post) => (
             <div
@@ -116,11 +116,11 @@ export const Instagram: React.FC = () => {
               className="bg-[#1A110B] hairline-border rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-amber-500/40"
             >
               {/* Cropped Container: Clips the top header bar and bottom footer so ONLY the video shows */}
-              <div className="relative w-full h-[400px] sm:h-[460px] bg-[#140D08] overflow-hidden rounded-xl">
+              <div className="relative w-full h-[350px] sm:h-[420px] md:h-[450px] bg-[#140D08] overflow-hidden rounded-xl">
                 <iframe
                   src={post.embedUrl}
                   title={post.caption}
-                  className="w-full h-[520px] sm:h-[560px] -mt-[56px] sm:-mt-[62px] border-0"
+                  className="absolute -top-[56px] sm:-top-[60px] left-0 w-full h-[125%] border-0 scale-[1.05] origin-top pointer-events-auto"
                   scrolling="no"
                   allowTransparency={true}
                   loading="lazy"
