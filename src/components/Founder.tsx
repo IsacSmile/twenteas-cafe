@@ -91,27 +91,29 @@ export const Founder: React.FC = () => {
             </p>
 
             {/* Signature & Details Block */}
-            <div className="pt-4 border-t border-cream-100/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="space-y-1">
-                <h3 className="font-serif-vintage text-2xl text-amber-300 font-normal tracking-wide flex items-center gap-2">
-                  <span>Siddharth S Mon</span>
+            <div className="pt-6 border-t border-cream-100/10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div className="space-y-1.5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-serif-vintage text-2xl sm:text-3xl text-amber-300 font-normal tracking-wide whitespace-nowrap">
+                    Siddharth S Mon
+                  </h3>
                   <a
                     href="https://www.instagram.com/sid_siddharthhh/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-mono text-cream-100/60 hover:text-amber-400 transition-colors font-light"
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-mono text-cream-100/70 hover:text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 hairline-border transition-all"
                   >
                     <span>@sid_siddharthhh</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3 h-3 text-amber-400" />
                   </a>
-                </h3>
-                <p className="text-xs uppercase tracking-[0.25em] text-cream-100/50 font-mono">
+                </div>
+                <p className="text-[11px] sm:text-xs uppercase tracking-widest text-cream-100/50 font-mono">
                   Karunagappally, Kerala · Opened Sept 4, 2026
                 </p>
               </div>
 
               {/* Handwritten Signature Styling */}
-              <div className="font-serif-vintage italic text-2xl text-amber-400/60 tracking-widest select-none pt-1 sm:pt-0">
+              <div className="font-serif-vintage italic text-xl sm:text-2xl text-amber-400/60 tracking-wider whitespace-nowrap shrink-0">
                 ~ Siddharth S Mon
               </div>
             </div>
