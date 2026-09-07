@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
         </p>
 
         {/* Clean Sharp-Cornered Amber CTA Button (No Pill, No Icons) */}
-        <div className="w-full sm:w-auto px-4">
+        <div className="w-full sm:w-auto px-4 mb-12 sm:mb-16">
           <a
             href="#menu"
             className="w-full sm:w-auto inline-block bg-amber-600 hover:bg-amber-500 text-black font-semibold uppercase tracking-[0.25em] text-xs px-10 py-4 rounded-none transition-colors duration-300 shadow-xl"
@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Clean Hairline Bottom Highlights Divider (No Boxes, No Icons) */}
-      <div className="w-full max-w-5xl mx-auto px-6 pt-8 border-t border-cream-100/10 z-10">
+      <div className="w-full max-w-5xl mx-auto px-6 mt-12 sm:mt-16 pt-8 border-t border-cream-100/10 z-10">
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-[10px] sm:text-[11px] font-mono tracking-widest text-cream-100/50 uppercase text-center">
           <span>Shaded Tree Canopy</span>
           <span className="text-amber-500/40 hidden sm:inline">•</span>
