@@ -4,17 +4,17 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[92vh] pt-28 pb-16 sm:pt-36 sm:pb-20 flex flex-col justify-between items-center overflow-hidden bg-[#140D08]">
       
-      {/* Background Subtle Tree Canopy Texture Overlay */}
+      {/* Background Real Cafe Storefront Night Image Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity filter saturate-[0.7] pointer-events-none transition-opacity duration-1000 scale-105"
+        className="absolute inset-0 bg-cover bg-center opacity-40 filter saturate-[0.9] contrast-[1.05] pointer-events-none transition-opacity duration-1000 scale-105"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=2000&q=80')`,
+          backgroundImage: `url('/hero-bg.jpg')`,
         }}
       />
 
-      {/* Warm Ambient Radial Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#140D08]/95 via-[#140D08]/85 to-[#140D08] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] sm:w-[700px] h-[450px] bg-amber-600/10 rounded-full blur-[160px] pointer-events-none" />
+      {/* Warm Ambient Radial & Vignette Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#140D08]/90 via-[#140D08]/80 to-[#140D08] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] sm:w-[700px] h-[450px] bg-amber-600/15 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Main Single-Column Editorial Hero Content */}
       <div className="my-auto z-10 w-full max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
