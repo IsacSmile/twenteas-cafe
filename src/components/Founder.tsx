@@ -1,4 +1,13 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
+
+const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
 
 export const Founder: React.FC = () => {
   return (
@@ -28,7 +37,7 @@ export const Founder: React.FC = () => {
               <div className="aspect-[4/5] overflow-hidden rounded-xl bg-[#1A110B] relative">
                 <img
                   src="/founder.jpg"
-                  alt="Isac Smile — Founder & Master Brewer of Twenteas Cafeteria"
+                  alt="Siddharth S Mon — Founder & Master Brewer of Twenteas Cafeteria"
                   className="w-full h-full object-cover object-center filter saturate-95 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
@@ -36,13 +45,25 @@ export const Founder: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#140D08]/80 via-transparent to-transparent" />
                 
                 {/* Founder Caption Tag on Photo */}
-                <div className="absolute bottom-4 left-4 right-4 text-left backdrop-blur-md bg-black/40 p-3 rounded-lg hairline-border">
-                  <div className="font-serif-vintage text-lg text-cream-100 font-normal">
-                    Isac Smile
+                <div className="absolute bottom-4 left-4 right-4 text-left backdrop-blur-md bg-black/40 p-3 rounded-lg hairline-border flex items-center justify-between">
+                  <div>
+                    <div className="font-serif-vintage text-lg text-cream-100 font-normal">
+                      Siddharth S Mon
+                    </div>
+                    <div className="text-[10px] font-mono text-amber-400/90 uppercase tracking-widest">
+                      Founder & Master Brewer
+                    </div>
                   </div>
-                  <div className="text-[10px] font-mono text-amber-400/90 uppercase tracking-widest">
-                    Founder & Master Brewer
-                  </div>
+
+                  <a
+                    href="https://www.instagram.com/sid_siddharthhh/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-amber-500/20 hover:bg-amber-500 text-amber-400 hover:text-black transition-colors hairline-border"
+                    title="Follow @sid_siddharthhh on Instagram"
+                  >
+                    <InstagramIcon className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -72,8 +93,17 @@ export const Founder: React.FC = () => {
             {/* Signature & Details Block */}
             <div className="pt-4 border-t border-cream-100/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
-                <h3 className="font-serif-vintage text-2xl text-amber-300 font-normal tracking-wide">
-                  Isac Smile
+                <h3 className="font-serif-vintage text-2xl text-amber-300 font-normal tracking-wide flex items-center gap-2">
+                  <span>Siddharth S Mon</span>
+                  <a
+                    href="https://www.instagram.com/sid_siddharthhh/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-mono text-cream-100/60 hover:text-amber-400 transition-colors font-light"
+                  >
+                    <span>@sid_siddharthhh</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 </h3>
                 <p className="text-xs uppercase tracking-[0.25em] text-cream-100/50 font-mono">
                   Karunagappally, Kerala · Opened Sept 4, 2026
@@ -82,7 +112,7 @@ export const Founder: React.FC = () => {
 
               {/* Handwritten Signature Styling */}
               <div className="font-serif-vintage italic text-2xl text-amber-400/60 tracking-widest select-none pt-1 sm:pt-0">
-                ~ Isac Smile
+                ~ Siddharth S Mon
               </div>
             </div>
 
