@@ -75,11 +75,11 @@ export const Instagram: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2">
               <span className="w-6 h-[1px] bg-amber-500/50" />
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium font-mono">
                 Follow The Story
               </span>
             </div>
@@ -108,8 +108,8 @@ export const Instagram: React.FC = () => {
           </div>
         </div>
 
-        {/* Instagram Reel Cards Grid (1 col mobile, 2 col tablet, 3 col desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Instagram Cards Grid (Reduced Height for Compact Elegance) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {INSTAGRAM_POSTS.map((post) => (
             <a
               key={post.id}
@@ -118,21 +118,21 @@ export const Instagram: React.FC = () => {
               rel="noopener noreferrer"
               className="group block bg-[#1A110B] hairline-border rounded-xl overflow-hidden hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1"
             >
-              {/* 9:16 Vertical Aspect Ratio Reel Container */}
-              <div className="relative aspect-[9/16] bg-[#140D08] overflow-hidden">
+              {/* Reduced Height Banner Container (h-48 sm:h-56) */}
+              <div className="relative h-48 sm:h-56 bg-[#140D08] overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.caption}
-                  className="w-full h-full object-cover filter saturate-90 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover filter saturate-90 group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
 
                 {/* Subtle Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A110B] via-transparent to-black/20 opacity-80 group-hover:opacity-60 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A110B] via-transparent to-black/30 opacity-80 group-hover:opacity-60 transition-opacity" />
 
                 {/* Instagram Badge Top Left */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] uppercase font-mono tracking-widest bg-black/60 backdrop-blur-md text-cream-100/90 hairline-border">
+                <div className="absolute top-3 left-3 z-10">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] uppercase font-mono tracking-widest bg-black/60 backdrop-blur-md text-cream-100/90 hairline-border">
                     <InstagramIcon className="w-3 h-3 text-amber-400" />
                     <span>Reel</span>
                   </span>
@@ -140,20 +140,20 @@ export const Instagram: React.FC = () => {
 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-black/50 backdrop-blur-md hairline-border flex items-center justify-center text-cream-100 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-400 transition-all duration-300 shadow-xl">
-                    <Play className="w-5 h-5 fill-current ml-0.5" />
+                  <div className="w-10 h-10 rounded-full bg-black/50 backdrop-blur-md hairline-border flex items-center justify-center text-cream-100 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-400 transition-all duration-300 shadow-xl">
+                    <Play className="w-4 h-4 fill-current ml-0.5" />
                   </div>
                 </div>
 
                 {/* Bottom Overlay Views */}
-                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-cream-100/70">
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-cream-100/70">
                   <span>{post.views}</span>
                   <span className="text-amber-400/90 group-hover:translate-x-1 transition-transform">Watch →</span>
                 </div>
               </div>
 
               {/* Card Caption Strip */}
-              <div className="p-5 space-y-2 border-t border-cream-100/5 bg-[#1A110B]">
+              <div className="p-4 space-y-1.5 border-t border-cream-100/5 bg-[#1A110B]">
                 <div className="text-[10px] font-mono tracking-widest uppercase text-amber-400/80">
                   {post.date}
                 </div>
@@ -166,8 +166,8 @@ export const Instagram: React.FC = () => {
         </div>
 
         {/* Footer Note */}
-        <div className="mt-16 text-center">
-          <p className="text-xs font-mono text-cream-100/40 uppercase tracking-[0.25em]">
+        <div className="mt-12 text-center">
+          <p className="text-[11px] font-mono text-cream-100/40 uppercase tracking-[0.25em]">
             • Tag @twenteas_cafe to be featured in our canopy story journal
           </p>
         </div>
