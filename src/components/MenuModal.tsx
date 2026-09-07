@@ -1,14 +1,13 @@
 import React from 'react';
-import { X, Calendar } from 'lucide-react';
+import { X } from 'lucide-react';
 import { MenuItem } from './Menu';
 
 interface MenuModalProps {
   item: MenuItem | null;
   onClose: () => void;
-  onOpenReservation: () => void;
 }
 
-export const MenuModal: React.FC<MenuModalProps> = ({ item, onClose, onOpenReservation }) => {
+export const MenuModal: React.FC<MenuModalProps> = ({ item, onClose }) => {
   if (!item) return null;
 
   return (
@@ -73,22 +72,16 @@ export const MenuModal: React.FC<MenuModalProps> = ({ item, onClose, onOpenReser
             </div>
           </div>
 
-          <p className="text-[11px] text-cream-100/50 italic font-serif-vintage">
+          <p className="text-xs text-cream-100/60 italic font-serif-vintage pt-1 text-center">
             * Prepared fresh daily under the trees at Twenteas Karunagappally. Walk-ins welcome.
           </p>
 
-          {/* Action: Plan Visit to Taste */}
-          <div className="pt-2">
-            <button
-              onClick={() => {
-                onClose();
-                onOpenReservation();
-              }}
-              className="w-full inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-coffee-950 font-bold uppercase tracking-[0.2em] text-xs py-3.5 rounded-full shadow-lg transition-all"
-            >
-              <Calendar className="w-4 h-4" /> Plan Visit To Taste Under The Trees
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="w-full bg-cream-100/10 hover:bg-cream-100/20 text-cream-100 font-semibold uppercase tracking-[0.2em] text-xs py-3.5 rounded-full transition-colors"
+          >
+            Close Note
+          </button>
 
         </div>
 

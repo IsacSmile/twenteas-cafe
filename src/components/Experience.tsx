@@ -65,11 +65,7 @@ const EVENTS_LIST: EventItem[] = [
   },
 ];
 
-interface ExperienceProps {
-  onOpenReservation: () => void;
-}
-
-export const Experience: React.FC<ExperienceProps> = ({ onOpenReservation }) => {
+export const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-32 bg-[#1A110B] text-cream-100 relative hairline-b">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
@@ -89,7 +85,7 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenReservation }) => 
           </h2>
 
           <p className="text-cream-100/70 text-base sm:text-lg font-light leading-relaxed">
-            Quiet music, open poetry circles, and tea tasting workshops beneath the canopy.
+            Quiet music, open poetry circles, and tea tasting workshops beneath the canopy. Walk-in seats available for all sessions.
           </p>
         </div>
 
@@ -145,13 +141,11 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenReservation }) => 
                 </div>
               </div>
 
+              {/* Informative Walk-In Tag */}
               <div className="p-8 pt-0">
-                <button
-                  onClick={onOpenReservation}
-                  className="w-full inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] py-3 rounded-full border border-amber-500/30 hover:border-amber-400 bg-amber-600/10 hover:bg-amber-600 text-amber-300 hover:text-coffee-950 transition-all duration-300"
-                >
-                  Join Us Under Trees
-                </button>
+                <div className="w-full text-center text-xs font-mono tracking-widest text-amber-400/80 bg-amber-950/30 border border-amber-800/40 py-3 rounded-full uppercase">
+                  • Open Walk-in Gathering · No Queries Needed
+                </div>
               </div>
 
             </div>

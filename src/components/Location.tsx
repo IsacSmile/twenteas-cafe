@@ -1,11 +1,7 @@
 import React from 'react';
-import { Navigation, ExternalLink, Calendar } from 'lucide-react';
+import { Navigation, ExternalLink } from 'lucide-react';
 
-interface LocationProps {
-  onOpenReservation: () => void;
-}
-
-export const Location: React.FC<LocationProps> = ({ onOpenReservation }) => {
+export const Location: React.FC = () => {
   return (
     <section id="location" className="py-32 bg-[#140D08] text-cream-100 relative hairline-b">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -25,11 +21,11 @@ export const Location: React.FC<LocationProps> = ({ onOpenReservation }) => {
                 Visit Us In Karunagappally
               </h2>
               <p className="text-cream-100/70 text-base mt-3 font-light leading-relaxed">
-                Open walk-in seating under shaded green trees. Free parking available.
+                Open walk-in seating under shaded green trees. No bookings or queries needed — just walk in and find your seat.
               </p>
             </div>
 
-            {/* Clean Hairline Information List */}
+            {/* Clean Information List */}
             <div className="space-y-6 text-sm text-cream-100/80 font-light">
               
               <div className="pb-4 hairline-b space-y-1">
@@ -40,7 +36,7 @@ export const Location: React.FC<LocationProps> = ({ onOpenReservation }) => {
               </div>
 
               <div className="pb-4 hairline-b space-y-1">
-                <span className="text-xs uppercase tracking-[0.2em] text-amber-400/80 block">Hours</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-amber-400/80 block">Operating Hours</span>
                 <p className="font-serif-vintage text-xl text-cream-100">
                   Monday – Sunday: 10:00 AM – 11:00 PM
                 </p>
@@ -50,12 +46,9 @@ export const Location: React.FC<LocationProps> = ({ onOpenReservation }) => {
               </div>
 
               <div className="pb-4 hairline-b space-y-1">
-                <span className="text-xs uppercase tracking-[0.2em] text-amber-400/80 block">Contact</span>
-                <p className="font-mono text-cream-100 text-sm">
-                  WhatsApp / Call: +91 98765 43210
-                </p>
-                <p className="text-xs text-cream-100/60 font-mono">
-                  Email: hello@twenteas.com
+                <span className="text-xs uppercase tracking-[0.2em] text-amber-400/80 block">Walk-In Policy</span>
+                <p className="font-serif-vintage text-lg text-cream-100">
+                  100% Walk-ins. Find a seat under the trees whenever you arrive.
                 </p>
               </div>
 
@@ -66,20 +59,12 @@ export const Location: React.FC<LocationProps> = ({ onOpenReservation }) => {
                 href="https://maps.google.com/?q=Karunagappally"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-amber-600 hover:bg-amber-500 text-coffee-950 font-bold uppercase tracking-[0.2em] text-xs px-7 py-3.5 rounded-full transition-all"
+                className="inline-flex items-center gap-2.5 bg-amber-600 hover:bg-amber-500 text-coffee-950 font-bold uppercase tracking-[0.2em] text-xs px-8 py-4 rounded-full transition-all shadow-lg"
               >
                 <Navigation className="w-4 h-4" />
-                Get Directions
+                Get Directions On Google Maps
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
-
-              <button
-                onClick={onOpenReservation}
-                className="inline-flex items-center gap-2.5 border border-cream-100/20 hover:border-amber-400/60 bg-cream-100/5 hover:bg-cream-100/10 text-cream-100 text-xs uppercase tracking-[0.2em] font-semibold px-7 py-3.5 rounded-full transition-all"
-              >
-                <Calendar className="w-4 h-4 text-amber-400" />
-                Plan Your Visit
-              </button>
             </div>
 
           </div>
@@ -91,11 +76,11 @@ export const Location: React.FC<LocationProps> = ({ onOpenReservation }) => {
                 
                 <svg className="absolute inset-0 w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <pattern id="map-grid-3" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <pattern id="map-grid-4" width="40" height="40" patternUnits="userSpaceOnUse">
                       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D4A359" strokeWidth="0.5" />
                     </pattern>
                   </defs>
-                  <rect width="100%" height="100%" fill="url(#map-grid-3)" />
+                  <rect width="100%" height="100%" fill="url(#map-grid-4)" />
                   <path d="M -50 160 C 100 130, 200 280, 500 220" stroke="#76886A" strokeWidth="3" fill="none" />
                 </svg>
 
