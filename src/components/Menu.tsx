@@ -129,38 +129,38 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
   });
 
   return (
-    <section id="menu" className="py-32 bg-[#140D08] text-cream-100 relative hairline-b">
+    <section id="menu" className="py-24 sm:py-32 bg-[#140D08] text-cream-100 relative hairline-b">
       
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2">
-            <span className="w-6 h-[1px] bg-amber-500/50" />
-            <span className="text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
+            <span className="w-5 sm:w-6 h-[1px] bg-amber-500/50" />
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-amber-400/90 font-medium">
               Curated Culinary Portfolio
             </span>
-            <span className="w-6 h-[1px] bg-amber-500/50" />
+            <span className="w-5 sm:w-6 h-[1px] bg-amber-500/50" />
           </div>
 
-          <h2 className="font-serif-vintage text-4xl sm:text-5xl lg:text-6xl text-cream-100 font-normal">
+          <h2 className="font-serif-vintage text-3xl sm:text-5xl lg:text-6xl text-cream-100 font-normal">
             Menu Showcase
           </h2>
 
-          <p className="text-cream-100/70 text-base sm:text-lg font-light leading-relaxed">
+          <p className="text-cream-100/70 text-xs sm:text-lg font-light leading-relaxed px-2">
             A lookbook of what we prepare daily under the trees. Served fresh at your table when you walk in.
           </p>
         </div>
 
         {/* Category Filters & Search */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 pb-6 hairline-b">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 sm:mb-16 pb-4 sm:pb-6 hairline-b">
           
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-xs uppercase tracking-[0.2em] font-light px-5 py-2.5 rounded-full transition-all duration-300 ${
+                className={`text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-light px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all duration-300 ${
                   selectedCategory === cat
                     ? 'bg-amber-600 text-coffee-950 font-bold shadow-lg'
                     : 'bg-cream-100/5 text-cream-100/70 hover:text-cream-100 border border-cream-100/10'
@@ -171,29 +171,30 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
             ))}
           </div>
 
-          <div className="w-full md:w-64 relative">
-            <Search className="w-3.5 h-3.5 text-cream-100/40 absolute left-4 top-1/2 -translate-y-1/2" />
+          <div className="w-full sm:w-64 relative">
+            <Search className="w-3.5 h-3.5 text-cream-100/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search showcase..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-cream-100/5 border border-cream-100/10 focus:border-amber-500 rounded-full pl-10 pr-4 py-2.5 text-xs text-cream-100 placeholder-cream-100/40 focus:outline-none transition-colors"
+              className="w-full bg-cream-100/5 border border-cream-100/10 focus:border-amber-500 rounded-full pl-9 pr-4 py-2 text-xs text-cream-100 placeholder-cream-100/40 focus:outline-none transition-colors"
             />
           </div>
 
         </div>
 
-        {/* Lookbook Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Lookbook Cards Grid: 2 Columns on Mobile, 4 Columns on Desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
           {filteredItems.map((item) => (
             <div
               key={item.id}
               onClick={() => onSelectItem(item)}
-              className="group cursor-pointer rounded-2xl overflow-hidden bg-[#1A110B] hairline-border transition-all duration-500 hover:border-amber-500/40 flex flex-col justify-between"
+              className="group cursor-pointer rounded-xl sm:rounded-2xl overflow-hidden bg-[#1A110B] hairline-border transition-all duration-500 hover:border-amber-500/40 flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-60 w-full overflow-hidden bg-[#140D08]">
+                {/* Photo Banner: h-32 on Mobile, h-60 on Desktop */}
+                <div className="relative h-32 sm:h-48 md:h-60 w-full overflow-hidden bg-[#140D08]">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -203,28 +204,27 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A110B] via-transparent to-transparent opacity-80" />
 
                   {item.badge && (
-                    <span className="absolute top-3.5 left-3.5 text-[10px] uppercase tracking-[0.2em] text-amber-300 font-medium bg-[#140D08]/90 backdrop-blur-md px-3 py-1 rounded-full border border-amber-500/20">
+                    <span className="absolute top-2 left-2 sm:top-3.5 sm:left-3.5 text-[8px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.2em] text-amber-300 font-medium bg-[#140D08]/90 backdrop-blur-md px-2 py-0.5 sm:px-3 sm:py-1 rounded-full border border-amber-500/20 max-w-[90%] truncate">
                       {item.badge}
                     </span>
                   )}
                 </div>
 
-                <div className="p-6 space-y-3">
-                  <div className="flex justify-between items-baseline">
-                    <h3 className="font-serif-vintage text-2xl text-cream-100 font-normal group-hover:text-amber-300 transition-colors">
-                      {item.name}
-                    </h3>
-                  </div>
+                {/* Compact Content Padding for Mobile */}
+                <div className="p-3 sm:p-6 space-y-1.5 sm:space-y-3">
+                  <h3 className="font-serif-vintage text-base sm:text-2xl text-cream-100 font-normal leading-snug group-hover:text-amber-300 transition-colors line-clamp-2">
+                    {item.name}
+                  </h3>
 
-                  <p className="text-cream-100/70 text-xs leading-relaxed font-light line-clamp-3">
+                  <p className="text-cream-100/70 text-[11px] sm:text-xs leading-relaxed font-light line-clamp-2">
                     {item.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 pt-2">
-                    {item.ingredients.slice(0, 3).map((ing) => (
+                  <div className="flex flex-wrap gap-1 pt-1">
+                    {item.ingredients.slice(0, 2).map((ing) => (
                       <span
                         key={ing}
-                        className="text-[10px] text-cream-100/50 font-mono"
+                        className="text-[9px] sm:text-[10px] text-cream-100/50 font-mono truncate max-w-full"
                       >
                         • {ing}
                       </span>
@@ -233,8 +233,8 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
                 </div>
               </div>
 
-              <div className="p-6 pt-0 flex items-center gap-2 text-xs text-amber-400/80 font-medium group-hover:text-amber-300">
-                <Eye className="w-3.5 h-3.5" />
+              <div className="p-3 sm:p-6 pt-0 flex items-center gap-1.5 text-[10px] sm:text-xs text-amber-400/90 font-medium group-hover:text-amber-300">
+                <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                 <span>View Details</span>
               </div>
 
