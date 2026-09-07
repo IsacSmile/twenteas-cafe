@@ -59,11 +59,11 @@ export const Location: React.FC = () => {
                 href="https://maps.google.com/?q=Karunagappally"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-amber-600 hover:bg-amber-500 text-coffee-950 font-bold uppercase tracking-[0.2em] text-xs px-8 py-4 rounded-full transition-all shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-coffee-950 font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-xs px-5 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all shadow-lg whitespace-nowrap"
               >
-                <Navigation className="w-4 h-4" />
-                Get Directions On Google Maps
-                <ExternalLink className="w-3.5 h-3.5" />
+                <Navigation className="w-4 h-4 shrink-0" />
+                <span>Get Directions On Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5 shrink-0" />
               </a>
             </div>
 
