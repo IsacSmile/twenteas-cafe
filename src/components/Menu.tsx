@@ -20,7 +20,7 @@ const MENU_ITEMS: MenuItem[] = [
     name: 'Karunagappally Tree-Spiced Chai',
     category: 'Teas',
     price: 90,
-    description: 'Slow-simmered artisanal black tea infused with green cardamom, star anise, ginger, and local organic jaggery.',
+    description: 'Slow-simmered artisanal black tea infused with green cardamom, star anise, fresh ginger, and local organic jaggery.',
     image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
     badge: 'House Signature',
     ingredients: ['Assam Leaf', 'Cardamom', 'Ginger', 'Jaggery', 'Organic Milk'],
@@ -32,7 +32,7 @@ const MENU_ITEMS: MenuItem[] = [
     name: 'Wood-Fired Garden Herb Crostini',
     category: 'Bites',
     price: 240,
-    description: 'Crispy sourdough brushed with garlic herb butter, topped with roasted cherry tomatoes, basil pesto, and charred mozzarella.',
+    description: 'Crispy sourdough brushed with garlic herb butter, topped with charred cherry tomatoes, basil pesto, and fresh mozzarella.',
     image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=800&q=80',
     badge: 'Wood-Fired Special',
     ingredients: ['Artisanal Sourdough', 'Fresh Basil Pesto', 'Mozzarella', 'Olive Oil'],
@@ -90,7 +90,7 @@ const MENU_ITEMS: MenuItem[] = [
     name: 'Hibiscus Mint Botanical Refresher',
     category: 'Refreshers',
     price: 150,
-    description: 'Cold-steeped wild hibiscus petals, bruised garden mint leaves, sparkling soda, and lime squeeze.',
+    description: 'Cold-steeped wild hibiscus petals, bruised garden mint leaves, sparkling soda, and fresh lime squeeze.',
     image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
     badge: 'Cold Brewed',
     ingredients: ['Hibiscus Petals', 'Fresh Mint', 'Lime', 'Sparkling Water'],
@@ -129,36 +129,40 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
   });
 
   return (
-    <section id="menu" className="py-24 bg-coffee-900 text-cream-100 relative border-b border-coffee-800/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="menu" className="py-28 bg-[#180E08] text-cream-100 relative border-b border-coffee-800/40">
+      
+      {/* Background Soft Glow */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-600/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 font-semibold bg-amber-950/50 border border-amber-800/40 px-3.5 py-1 rounded-full mb-4">
-            <Utensils className="w-3.5 h-3.5" />
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 font-semibold bg-[#281811] border border-amber-800/40 px-4 py-1.5 rounded-full">
+            <Utensils className="w-3.5 h-3.5 text-amber-400" />
             Curated Culinary Selection
           </div>
-          <h2 className="font-serif-vintage text-3xl sm:text-4xl lg:text-5xl text-cream-50 font-normal">
+          <h2 className="font-serif-vintage text-4xl sm:text-5xl lg:text-6xl text-cream-50 font-normal">
             Menu Highlights
           </h2>
-          <p className="text-cream-200/75 text-sm sm:text-base mt-3 font-light leading-relaxed">
+          <p className="text-cream-200/80 text-base sm:text-lg font-light leading-relaxed">
             Handcrafted beverages and slow wood-fired bites prepared with fresh local ingredients under the tree canopy.
           </p>
         </div>
 
-        {/* Category Filters & Search */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12 pb-6 border-b border-coffee-800/60">
+        {/* Category Filter Tabs & Search Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-5 mb-14 pb-6 border-b border-coffee-800/60">
           
-          {/* Filter Pills */}
+          {/* Category Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-full transition-all duration-200 ${
+                className={`text-xs uppercase tracking-wider font-semibold px-5 py-3 rounded-xl transition-all duration-300 ${
                   selectedCategory === cat
-                    ? 'bg-amber-600 text-coffee-950 shadow-md'
-                    : 'bg-coffee-950/80 text-cream-200/80 hover:text-cream-50 hover:bg-coffee-850 border border-coffee-800/60'
+                    ? 'bg-amber-600 text-coffee-950 shadow-lg shadow-amber-950/40 glow-gold'
+                    : 'bg-[#23150D]/80 text-cream-200/80 hover:text-cream-50 hover:bg-[#2E1C12] border border-coffee-800/60'
                 }`}
               >
                 {cat === 'All' ? 'All Moments' : cat}
@@ -166,73 +170,73 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
             ))}
           </div>
 
-          {/* Search Bar */}
-          <div className="w-full md:w-64 relative">
-            <Search className="w-3.5 h-3.5 text-cream-400/50 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          {/* Search Box */}
+          <div className="w-full md:w-72 relative">
+            <Search className="w-4 h-4 text-cream-400/50 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search flavor or bite..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-coffee-950/80 border border-coffee-800 focus:border-amber-500 rounded-full pl-9 pr-4 py-2 text-xs text-cream-100 placeholder-cream-400/50 focus:outline-none transition-colors"
+              className="w-full bg-[#120B07] border border-coffee-800 focus:border-amber-500 rounded-xl pl-10 pr-4 py-2.5 text-xs text-cream-100 placeholder-cream-400/50 focus:outline-none transition-colors"
             />
           </div>
         </div>
 
-        {/* Menu Cards Grid with Product Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Menu Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="group bg-coffee-950/90 border border-coffee-800 hover:border-amber-500/50 rounded-2xl overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl flex flex-col justify-between"
+              className="group glass-card rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between"
             >
               <div>
-                {/* Product Image Banner */}
-                <div className="relative h-48 w-full overflow-hidden bg-coffee-900">
+                {/* Culinary Photo Banner */}
+                <div className="relative h-52 w-full overflow-hidden bg-coffee-950">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1D130C] via-transparent to-transparent opacity-90" />
                   
                   {/* Badge Overlay */}
                   {item.badge && (
-                    <span className="absolute top-3 left-3 text-[10px] uppercase tracking-widest text-amber-300 font-semibold bg-coffee-950/90 backdrop-blur-sm border border-amber-800/60 px-2.5 py-1 rounded-md shadow-md">
+                    <span className="absolute top-3.5 left-3.5 text-[10px] uppercase tracking-widest text-amber-300 font-semibold bg-[#120B07]/90 backdrop-blur-md border border-amber-800/60 px-3 py-1 rounded-lg shadow-md">
                       {item.badge}
                     </span>
                   )}
 
                   {item.popular && (
-                    <span className="absolute top-3 right-3 inline-flex items-center gap-1 text-[10px] text-olive-300 font-semibold bg-olive-950/90 backdrop-blur-sm border border-olive-700/50 px-2.5 py-1 rounded-md">
+                    <span className="absolute top-3.5 right-3.5 inline-flex items-center gap-1 text-[10px] text-olive-300 font-semibold bg-olive-950/90 backdrop-blur-md border border-olive-700/50 px-2.5 py-1 rounded-lg">
                       <Sparkles className="w-3 h-3 text-olive-400" />
                       Popular
                     </span>
                   )}
 
-                  {/* Price Tag Overlay */}
-                  <span className="absolute bottom-3 right-3 text-sm font-bold text-cream-50 bg-amber-600/90 backdrop-blur-sm px-3 py-1 rounded-md shadow-md font-sans">
+                  {/* Price Badge Overlay */}
+                  <span className="absolute bottom-3.5 right-3.5 text-sm font-bold text-cream-50 bg-amber-600/90 backdrop-blur-md px-3.5 py-1 rounded-lg shadow-lg font-sans">
                     ₹{item.price}
                   </span>
                 </div>
 
-                {/* Card Content Body */}
-                <div className="p-5">
-                  <h3 className="font-serif-vintage text-xl text-cream-50 font-semibold group-hover:text-amber-300 transition-colors mb-2 leading-snug">
+                {/* Card Body */}
+                <div className="p-6 space-y-3">
+                  <h3 className="font-serif-vintage text-2xl text-cream-50 font-semibold group-hover:text-amber-300 transition-colors leading-snug">
                     {item.name}
                   </h3>
 
-                  <p className="text-cream-200/75 text-xs leading-relaxed font-light mb-4 line-clamp-3">
+                  <p className="text-cream-200/75 text-xs leading-relaxed font-light line-clamp-3">
                     {item.description}
                   </p>
 
-                  {/* Ingredient Chips */}
-                  <div className="flex flex-wrap gap-1.5 mb-2">
+                  {/* Ingredient Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {item.ingredients.slice(0, 3).map((ing) => (
                       <span
                         key={ing}
-                        className="text-[10px] text-cream-400/80 bg-coffee-900 border border-coffee-800 px-2 py-0.5 rounded"
+                        className="text-[10px] text-cream-400/80 bg-coffee-950/80 border border-coffee-800/80 px-2.5 py-0.5 rounded-md"
                       >
                         {ing}
                       </span>
@@ -247,10 +251,10 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
               </div>
 
               {/* View Details Action */}
-              <div className="px-5 pb-5 pt-1">
+              <div className="p-6 pt-0">
                 <button
                   onClick={() => onSelectItem(item)}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-coffee-850 hover:bg-amber-600 hover:text-coffee-950 border border-coffee-750 hover:border-amber-600 text-cream-200 text-xs font-semibold uppercase tracking-wider py-2.5 rounded-lg transition-all duration-200 active:scale-98"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#2E1C12]/90 hover:bg-amber-600 hover:text-coffee-950 border border-coffee-700/60 hover:border-amber-600 text-cream-200 text-xs font-semibold uppercase tracking-wider py-3 rounded-xl transition-all duration-300 active:scale-98 shadow-md"
                 >
                   <Info className="w-3.5 h-3.5" />
                   View Details & Order Note
@@ -261,17 +265,17 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
           ))}
         </div>
 
-        {/* Empty state search fallback */}
+        {/* Empty state fallback */}
         {filteredItems.length === 0 && (
-          <div className="text-center py-16 bg-coffee-950/50 rounded-2xl border border-coffee-800">
-            <Coffee className="w-8 h-8 text-amber-500/50 mx-auto mb-3" />
-            <p className="text-cream-200 font-serif text-lg">No menu items match your search.</p>
+          <div className="text-center py-16 bg-[#120B07]/60 rounded-3xl border border-coffee-800">
+            <Coffee className="w-10 h-10 text-amber-500/50 mx-auto mb-3" />
+            <p className="text-cream-200 font-serif text-xl">No menu items match your search.</p>
             <button
               onClick={() => {
                 setSelectedCategory('All');
                 setSearchQuery('');
               }}
-              className="mt-3 text-xs text-amber-400 underline hover:text-amber-300 font-semibold"
+              className="mt-4 text-xs text-amber-400 underline hover:text-amber-300 font-semibold"
             >
               Reset Search & Filters
             </button>
