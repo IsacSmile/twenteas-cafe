@@ -2,60 +2,90 @@ import React from 'react';
 
 export const Founder: React.FC = () => {
   return (
-    <section id="founder" className="py-32 bg-[#1A110B] text-cream-100 relative hairline-b overflow-hidden">
+    <section id="founder" className="py-24 sm:py-32 bg-[#170E09] text-cream-100 relative hairline-b overflow-hidden">
       
-      {/* Soft Ambient Radial Lighting Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber-600/5 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background Soft Glow */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
-        {/* Section Header Line */}
-        <div className="inline-flex items-center gap-3 mb-12">
+        {/* Section Header */}
+        <div className="inline-flex items-center gap-3 mb-12 sm:mb-16">
           <span className="w-8 h-[1px] bg-amber-500/50" />
-          <span className="text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
+          <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium font-mono">
             Founder's Note
           </span>
-          <span className="w-8 h-[1px] bg-amber-500/50" />
         </div>
 
-        {/* Founder Card Container */}
-        <div className="flex flex-col items-center space-y-8">
+        {/* Editorial Layout: Photo + Narrative Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Founder Photo - Clean Soft-Cropped Frame with Amber Border */}
-          <div className="relative group">
-            <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border border-amber-500/30 p-2 bg-[#140D08] shadow-2xl transition-transform duration-700 group-hover:scale-105">
-              <img
-                src="/founder.jpg"
-                alt="Isac Smile - Founder of Twenteas Cafeteria"
-                className="w-full h-full object-cover object-top rounded-full filter saturate-[0.95]"
-              />
-            </div>
+          {/* Founder Portrait Column */}
+          <div className="lg:col-span-5 relative group">
             
-            <div className="absolute -bottom-1 -right-1 bg-amber-600 text-coffee-950 p-2 rounded-full shadow-xl">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
+            {/* Vintage Frame Matting */}
+            <div className="relative z-10 bg-[#140D08] p-3 sm:p-4 rounded-2xl hairline-border shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]">
+              <div className="aspect-[4/5] overflow-hidden rounded-xl bg-[#1A110B] relative">
+                <img
+                  src="/founder.jpg"
+                  alt="Isac Smile — Founder & Master Brewer of Twenteas Cafeteria"
+                  className="w-full h-full object-cover object-top filter saturate-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                
+                {/* Subtle Image Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#140D08]/80 via-transparent to-transparent" />
+                
+                {/* Founder Caption Tag on Photo */}
+                <div className="absolute bottom-4 left-4 right-4 text-left backdrop-blur-md bg-black/40 p-3 rounded-lg hairline-border">
+                  <div className="font-serif-vintage text-lg text-cream-100 font-normal">
+                    Isac Smile
+                  </div>
+                  <div className="text-[10px] font-mono text-amber-400/90 uppercase tracking-widest">
+                    Founder & Master Brewer
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* Decorative Offset Vintage Frame Border */}
+            <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 inset-0 rounded-2xl border border-amber-500/20 pointer-events-none z-0" />
           </div>
 
-          {/* First-Person Personal Note */}
-          <blockquote className="font-serif-vintage text-2xl sm:text-3xl lg:text-4xl italic text-cream-100/95 max-w-2xl font-normal leading-relaxed text-balance">
-            “I wanted a place where the trees do the talking and the tea does the rest.”
-          </blockquote>
+          {/* Narrative & Quote Column */}
+          <div className="lg:col-span-7 space-y-8 text-left">
+            
+            {/* Main Quote Block */}
+            <div className="space-y-4">
+              <span className="text-amber-500/40 text-6xl font-serif-vintage leading-none block -mb-6 select-none">
+                “
+              </span>
+              <blockquote className="font-serif-vintage text-3xl sm:text-4xl lg:text-5xl text-cream-100 font-normal leading-snug tracking-tight text-balance">
+                I wanted a place where the trees do the talking and the tea does the rest.
+              </blockquote>
+            </div>
 
-          {/* Founder Signature & Role Block */}
-          <div className="space-y-1.5 pt-2">
-            <h3 className="font-serif-vintage text-2xl sm:text-3xl text-amber-300 font-normal tracking-wide">
-              Isac Smile
-            </h3>
-            <p className="text-xs uppercase tracking-[0.25em] text-cream-100/50 font-light font-sans">
-              Founder & Master Brewer
+            {/* Printed Journal Copy */}
+            <p className="text-cream-100/75 text-sm sm:text-base font-light leading-relaxed max-w-2xl">
+              Twenteas Cafeteria was born from a simple desire — to build a sanctuary beneath Karunagappally's shaded green canopy. A space free from rushing orders, where fresh spiced tea, warm conversations, and live acoustic melodies flow gently around the table.
             </p>
-          </div>
 
-          {/* Subtle Handwritten Signature Accent */}
-          <div className="pt-1 text-amber-400/50 font-serif-vintage italic text-2xl tracking-widest select-none">
-            Isac Smile
+            {/* Signature & Details Block */}
+            <div className="pt-4 border-t border-cream-100/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <h3 className="font-serif-vintage text-2xl text-amber-300 font-normal tracking-wide">
+                  Isac Smile
+                </h3>
+                <p className="text-xs uppercase tracking-[0.25em] text-cream-100/50 font-mono">
+                  Karunagappally, Kerala · Opened Sept 4, 2026
+                </p>
+              </div>
+
+              {/* Handwritten Signature Styling */}
+              <div className="font-serif-vintage italic text-2xl text-amber-400/60 tracking-widest select-none pt-1 sm:pt-0">
+                ~ Isac Smile
+              </div>
+            </div>
+
           </div>
 
         </div>
