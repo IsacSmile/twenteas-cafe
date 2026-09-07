@@ -48,11 +48,11 @@ export const Hero: React.FC = () => {
           A serene open-air sanctuary shaded by ancient green foliage. Walk in, find a seat under the trees, and enjoy slow artisanal chai, wood-fired snacks, and quiet conversation.
         </p>
 
-        {/* Clean Sharp-Cornered Amber CTA Button (No Pill, No Icons) */}
+        {/* Clean Rounded Amber CTA Button */}
         <div className="w-full sm:w-auto px-4 mb-12 sm:mb-16">
           <a
             href="#menu"
-            className="w-full sm:w-auto inline-block bg-amber-600 hover:bg-amber-500 text-black font-semibold uppercase tracking-[0.25em] text-xs px-10 py-4 rounded-none transition-colors duration-300 shadow-xl"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-amber-600 hover:bg-amber-500 text-black font-semibold uppercase tracking-[0.15em] sm:tracking-[0.25em] text-[11px] sm:text-xs px-6 sm:px-10 py-3.5 sm:py-4 rounded-full transition-all duration-300 shadow-xl whitespace-nowrap"
           >
             See You Under The Trees
           </a>
