@@ -94,16 +94,16 @@ export const Instagram: React.FC = () => {
           </div>
 
           {/* Follow CTA Link */}
-          <div className="shrink-0">
+          <div className="shrink-0 w-full sm:w-auto">
             <a
               href="https://www.instagram.com/twenteas_cafe/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3 text-xs uppercase tracking-[0.2em] font-mono text-cream-100 bg-[#1F1610] hover:bg-[#2A1E16] hairline-border hover:border-amber-500/40 rounded-full transition-all group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 text-xs uppercase tracking-[0.15em] font-mono text-cream-100 bg-[#1F1610] hover:bg-[#2A1E16] hairline-border hover:border-amber-500/40 rounded-full transition-all group whitespace-nowrap"
             >
-              <InstagramIcon className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
+              <InstagramIcon className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform shrink-0" />
               <span>Follow @twenteas_cafe</span>
-              <ExternalLink className="w-3.5 h-3.5 text-cream-100/40 group-hover:text-amber-400 group-hover:translate-x-0.5 transition-all" />
+              <ExternalLink className="w-3.5 h-3.5 text-cream-100/40 group-hover:text-amber-400 group-hover:translate-x-0.5 transition-all shrink-0" />
             </a>
           </div>
         </div>
@@ -116,11 +116,11 @@ export const Instagram: React.FC = () => {
               className="bg-[#1A110B] hairline-border rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-amber-500/40"
             >
               {/* Cropped Container: Clips the top header bar and bottom footer so ONLY the video shows */}
-              <div className="relative w-full h-[460px] bg-[#140D08] overflow-hidden rounded-xl">
+              <div className="relative w-full h-[400px] sm:h-[460px] bg-[#140D08] overflow-hidden rounded-xl">
                 <iframe
                   src={post.embedUrl}
                   title={post.caption}
-                  className="w-full h-[560px] -mt-[62px] border-0"
+                  className="w-full h-[520px] sm:h-[560px] -mt-[56px] sm:-mt-[62px] border-0"
                   scrolling="no"
                   allowTransparency={true}
                   loading="lazy"
