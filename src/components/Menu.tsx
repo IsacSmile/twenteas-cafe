@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Utensils, Sparkles, Coffee, Info, Search } from 'lucide-react';
+import { Eye, Coffee, Search } from 'lucide-react';
 
 export interface MenuItem {
   id: string;
@@ -129,40 +129,41 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
   });
 
   return (
-    <section id="menu" className="py-28 bg-[#180E08] text-cream-100 relative border-b border-coffee-800/40">
+    <section id="menu" className="py-32 bg-[#140D08] text-cream-100 relative hairline-b">
       
-      {/* Background Soft Glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-600/5 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-amber-400 font-semibold bg-[#281811] border border-amber-800/40 px-4 py-1.5 rounded-full">
-            <Utensils className="w-3.5 h-3.5 text-amber-400" />
-            Curated Culinary Selection
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2">
+            <span className="w-6 h-[1px] bg-amber-500/50" />
+            <span className="text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
+              Curated Culinary Portfolio
+            </span>
+            <span className="w-6 h-[1px] bg-amber-500/50" />
           </div>
-          <h2 className="font-serif-vintage text-4xl sm:text-5xl lg:text-6xl text-cream-50 font-normal">
-            Menu Highlights
+
+          <h2 className="font-serif-vintage text-4xl sm:text-5xl lg:text-6xl text-cream-100 font-normal">
+            Menu Showcase
           </h2>
-          <p className="text-cream-200/80 text-base sm:text-lg font-light leading-relaxed">
-            Handcrafted beverages and slow wood-fired bites prepared with fresh local ingredients under the tree canopy.
+
+          <p className="text-cream-100/70 text-base sm:text-lg font-light leading-relaxed">
+            A lookbook of what we prepare daily under the trees. Served fresh at your table when you walk in.
           </p>
         </div>
 
-        {/* Category Filter Tabs & Search Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5 mb-14 pb-6 border-b border-coffee-800/60">
+        {/* Category Filters & Search */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 pb-6 hairline-b">
           
-          {/* Category Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`text-xs uppercase tracking-wider font-semibold px-5 py-3 rounded-xl transition-all duration-300 ${
+                className={`text-xs uppercase tracking-[0.2em] font-light px-5 py-2.5 rounded-full transition-all duration-300 ${
                   selectedCategory === cat
-                    ? 'bg-amber-600 text-coffee-950 shadow-lg shadow-amber-950/40 glow-gold'
-                    : 'bg-[#23150D]/80 text-cream-200/80 hover:text-cream-50 hover:bg-[#2E1C12] border border-coffee-800/60'
+                    ? 'bg-amber-600 text-coffee-950 font-bold shadow-lg'
+                    : 'bg-cream-100/5 text-cream-100/70 hover:text-cream-100 border border-cream-100/10'
                 }`}
               >
                 {cat === 'All' ? 'All Moments' : cat}
@@ -170,114 +171,89 @@ export const Menu: React.FC<MenuProps> = ({ onSelectItem }) => {
             ))}
           </div>
 
-          {/* Search Box */}
-          <div className="w-full md:w-72 relative">
-            <Search className="w-4 h-4 text-cream-400/50 absolute left-4 top-1/2 -translate-y-1/2" />
+          <div className="w-full md:w-64 relative">
+            <Search className="w-3.5 h-3.5 text-cream-100/40 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search flavor or bite..."
+              placeholder="Search showcase..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#120B07] border border-coffee-800 focus:border-amber-500 rounded-xl pl-10 pr-4 py-2.5 text-xs text-cream-100 placeholder-cream-400/50 focus:outline-none transition-colors"
+              className="w-full bg-cream-100/5 border border-cream-100/10 focus:border-amber-500 rounded-full pl-10 pr-4 py-2.5 text-xs text-cream-100 placeholder-cream-100/40 focus:outline-none transition-colors"
             />
           </div>
+
         </div>
 
-        {/* Menu Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+        {/* Lookbook Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="group glass-card rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between"
+              onClick={() => onSelectItem(item)}
+              className="group cursor-pointer rounded-2xl overflow-hidden bg-[#1A110B] hairline-border transition-all duration-500 hover:border-amber-500/40 flex flex-col justify-between"
             >
               <div>
-                {/* Culinary Photo Banner */}
-                <div className="relative h-52 w-full overflow-hidden bg-coffee-950">
+                <div className="relative h-60 w-full overflow-hidden bg-[#140D08]">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter saturate-90"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1D130C] via-transparent to-transparent opacity-90" />
-                  
-                  {/* Badge Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A110B] via-transparent to-transparent opacity-80" />
+
                   {item.badge && (
-                    <span className="absolute top-3.5 left-3.5 text-[10px] uppercase tracking-widest text-amber-300 font-semibold bg-[#120B07]/90 backdrop-blur-md border border-amber-800/60 px-3 py-1 rounded-lg shadow-md">
+                    <span className="absolute top-3.5 left-3.5 text-[10px] uppercase tracking-[0.2em] text-amber-300 font-medium bg-[#140D08]/90 backdrop-blur-md px-3 py-1 rounded-full border border-amber-500/20">
                       {item.badge}
                     </span>
                   )}
-
-                  {item.popular && (
-                    <span className="absolute top-3.5 right-3.5 inline-flex items-center gap-1 text-[10px] text-olive-300 font-semibold bg-olive-950/90 backdrop-blur-md border border-olive-700/50 px-2.5 py-1 rounded-lg">
-                      <Sparkles className="w-3 h-3 text-olive-400" />
-                      Popular
-                    </span>
-                  )}
-
-                  {/* Price Badge Overlay */}
-                  <span className="absolute bottom-3.5 right-3.5 text-sm font-bold text-cream-50 bg-amber-600/90 backdrop-blur-md px-3.5 py-1 rounded-lg shadow-lg font-sans">
-                    ₹{item.price}
-                  </span>
                 </div>
 
-                {/* Card Body */}
                 <div className="p-6 space-y-3">
-                  <h3 className="font-serif-vintage text-2xl text-cream-50 font-semibold group-hover:text-amber-300 transition-colors leading-snug">
-                    {item.name}
-                  </h3>
+                  <div className="flex justify-between items-baseline">
+                    <h3 className="font-serif-vintage text-2xl text-cream-100 font-normal group-hover:text-amber-300 transition-colors">
+                      {item.name}
+                    </h3>
+                  </div>
 
-                  <p className="text-cream-200/75 text-xs leading-relaxed font-light line-clamp-3">
+                  <p className="text-cream-100/70 text-xs leading-relaxed font-light line-clamp-3">
                     {item.description}
                   </p>
 
-                  {/* Ingredient Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-1">
+                  <div className="flex flex-wrap gap-1.5 pt-2">
                     {item.ingredients.slice(0, 3).map((ing) => (
                       <span
                         key={ing}
-                        className="text-[10px] text-cream-400/80 bg-coffee-950/80 border border-coffee-800/80 px-2.5 py-0.5 rounded-md"
+                        className="text-[10px] text-cream-100/50 font-mono"
                       >
-                        {ing}
+                        • {ing}
                       </span>
                     ))}
-                    {item.ingredients.length > 3 && (
-                      <span className="text-[10px] text-cream-400/50 px-1 py-0.5">
-                        +{item.ingredients.length - 3} more
-                      </span>
-                    )}
                   </div>
                 </div>
               </div>
 
-              {/* View Details Action */}
-              <div className="p-6 pt-0">
-                <button
-                  onClick={() => onSelectItem(item)}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#2E1C12]/90 hover:bg-amber-600 hover:text-coffee-950 border border-coffee-700/60 hover:border-amber-600 text-cream-200 text-xs font-semibold uppercase tracking-wider py-3 rounded-xl transition-all duration-300 active:scale-98 shadow-md"
-                >
-                  <Info className="w-3.5 h-3.5" />
-                  View Details & Order Note
-                </button>
+              <div className="p-6 pt-0 flex items-center gap-2 text-xs text-amber-400/80 font-medium group-hover:text-amber-300">
+                <Eye className="w-3.5 h-3.5" />
+                <span>View Details</span>
               </div>
 
             </div>
           ))}
         </div>
 
-        {/* Empty state fallback */}
         {filteredItems.length === 0 && (
-          <div className="text-center py-16 bg-[#120B07]/60 rounded-3xl border border-coffee-800">
-            <Coffee className="w-10 h-10 text-amber-500/50 mx-auto mb-3" />
-            <p className="text-cream-200 font-serif text-xl">No menu items match your search.</p>
+          <div className="text-center py-16 bg-cream-100/5 rounded-2xl border border-cream-100/10">
+            <Coffee className="w-8 h-8 text-amber-500/50 mx-auto mb-3" />
+            <p className="text-cream-100 font-serif-vintage text-xl">No highlights match your search.</p>
             <button
               onClick={() => {
                 setSelectedCategory('All');
                 setSearchQuery('');
               }}
-              className="mt-4 text-xs text-amber-400 underline hover:text-amber-300 font-semibold"
+              className="mt-3 text-xs text-amber-400 underline hover:text-amber-300"
             >
-              Reset Search & Filters
+              Reset Search
             </button>
           </div>
         )}
