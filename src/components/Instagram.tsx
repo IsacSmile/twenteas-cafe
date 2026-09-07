@@ -25,7 +25,7 @@ const INSTAGRAM_POSTS: InstagramPost[] = [
     date: 'Sept 5, 2026',
     views: '4.2k views',
     image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80',
-    permalink: 'https://www.instagram.com/twenteas_cafe/',
+    permalink: 'https://www.instagram.com/p/Dc8o0-MT_zB/',
   },
   {
     id: 'ig-2',
@@ -33,7 +33,7 @@ const INSTAGRAM_POSTS: InstagramPost[] = [
     date: 'Sept 4, 2026',
     views: '3.8k views',
     image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=600&q=80',
-    permalink: 'https://www.instagram.com/twenteas_cafe/',
+    permalink: 'https://www.instagram.com/p/Dc3ifMdzkS4/',
   },
   {
     id: 'ig-3',
@@ -41,7 +41,7 @@ const INSTAGRAM_POSTS: InstagramPost[] = [
     date: 'Sept 3, 2026',
     views: '5.1k views',
     image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80',
-    permalink: 'https://www.instagram.com/twenteas_cafe/',
+    permalink: 'https://www.instagram.com/p/Dc1Ky05zZSL/',
   },
   {
     id: 'ig-4',
@@ -49,7 +49,7 @@ const INSTAGRAM_POSTS: InstagramPost[] = [
     date: 'Aug 30, 2026',
     views: '2.9k views',
     image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80',
-    permalink: 'https://www.instagram.com/twenteas_cafe/',
+    permalink: 'https://www.instagram.com/p/DcyXZ2-zNxy/',
   },
   {
     id: 'ig-5',
@@ -57,7 +57,7 @@ const INSTAGRAM_POSTS: InstagramPost[] = [
     date: 'Aug 28, 2026',
     views: '3.4k views',
     image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80',
-    permalink: 'https://www.instagram.com/twenteas_cafe/',
+    permalink: 'https://www.instagram.com/p/Dcv39GJzGc7/',
   },
   {
     id: 'ig-6',
@@ -65,7 +65,7 @@ const INSTAGRAM_POSTS: InstagramPost[] = [
     date: 'Aug 25, 2026',
     views: '4.7k views',
     image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80',
-    permalink: 'https://www.instagram.com/twenteas_cafe/',
+    permalink: 'https://www.instagram.com/p/DcsiI0szXXW/',
   },
 ];
 
@@ -108,7 +108,7 @@ export const Instagram: React.FC = () => {
           </div>
         </div>
 
-        {/* Instagram Cards Grid (Reduced Height for Compact Elegance) */}
+        {/* Instagram Cards Grid (Exact Post Permalinks) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {INSTAGRAM_POSTS.map((post) => (
             <a
@@ -118,7 +118,7 @@ export const Instagram: React.FC = () => {
               rel="noopener noreferrer"
               className="group block bg-[#1A110B] hairline-border rounded-xl overflow-hidden hover:border-amber-500/40 transition-all duration-300 transform hover:-translate-y-1"
             >
-              {/* Reduced Height Banner Container (h-48 sm:h-56) */}
+              {/* Sleek Compact Height Banner (h-48 sm:h-56) */}
               <div className="relative h-48 sm:h-56 bg-[#140D08] overflow-hidden">
                 <img
                   src={post.image}
@@ -148,7 +148,7 @@ export const Instagram: React.FC = () => {
                 {/* Bottom Overlay Views */}
                 <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-cream-100/70">
                   <span>{post.views}</span>
-                  <span className="text-amber-400/90 group-hover:translate-x-1 transition-transform">Watch →</span>
+                  <span className="text-amber-400/90 group-hover:translate-x-1 transition-transform">Watch on Instagram →</span>
                 </div>
               </div>
 
