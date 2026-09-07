@@ -29,7 +29,7 @@ export const Founder: React.FC = () => {
                 <img
                   src="/founder.jpg"
                   alt="Isac Smile — Founder & Master Brewer of Twenteas Cafeteria"
-                  className="w-full h-full object-cover object-top filter saturate-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-center filter saturate-95 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
                 {/* Subtle Image Gradient Overlay */}
