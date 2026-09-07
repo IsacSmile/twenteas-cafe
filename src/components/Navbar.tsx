@@ -57,10 +57,15 @@ export const Navbar: React.FC = () => {
 
           {/* Location Badge */}
           <div className="hidden md:flex items-center space-x-4">
-            <span className="inline-flex items-center gap-2 text-xs text-olive-300/90 bg-olive-950/60 border border-olive-700/40 px-4 py-2 rounded-full font-medium">
-              <MapPin className="w-3.5 h-3.5 text-olive-400" />
-              Karunagappally · Walk-ins Welcome
-            </span>
+            <a
+              href="https://maps.app.goo.gl/Cx13Dh9dq6c1UsxQA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs text-olive-300/90 bg-olive-950/60 border border-olive-700/40 px-4 py-2 rounded-full font-medium hover:border-amber-500/50 hover:bg-olive-900/60 transition-all cursor-pointer"
+            >
+              <MapPin className="w-3.5 h-3.5 text-olive-400 shrink-0" />
+              <span>Karunagappally · Walk-ins Welcome</span>
+            </a>
           </div>
 
           {/* Mobile Navigation Toggle Button */}
@@ -82,10 +87,15 @@ export const Navbar: React.FC = () => {
         <div className="md:hidden bg-[#140D08]/98 backdrop-blur-2xl hairline-b px-5 pt-5 pb-8 transition-all duration-300 animate-slide-up">
           <div className="flex flex-col space-y-4">
             <div className="pb-3 hairline-b flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-xs text-olive-400 font-medium">
-                <MapPin className="w-3.5 h-3.5" />
+              <a
+                href="https://maps.app.goo.gl/Cx13Dh9dq6c1UsxQA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-xs text-olive-400 font-medium hover:underline"
+              >
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
                 <span>Karunagappally · Walk-ins Only</span>
-              </div>
+              </a>
             </div>
 
             {navLinks.map((link) => (

@@ -56,7 +56,7 @@ export const Location: React.FC = () => {
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
-                href="https://maps.google.com/?q=Karunagappally"
+                href="https://maps.app.goo.gl/Cx13Dh9dq6c1UsxQA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-500 text-coffee-950 font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-xs px-5 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all shadow-lg whitespace-nowrap"
@@ -98,7 +98,7 @@ export const Location: React.FC = () => {
                 </div>
 
                 <a
-                  href="https://maps.google.com/?q=Karunagappally"
+                  href="https://maps.app.goo.gl/Cx13Dh9dq6c1UsxQA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative z-10 mt-6 text-xs text-amber-300 font-semibold hover:underline flex items-center gap-1.5 bg-[#1A110B] px-5 py-2.5 rounded-full border border-amber-500/30"
