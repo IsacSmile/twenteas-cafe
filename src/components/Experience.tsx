@@ -4,7 +4,7 @@ import { Calendar, Clock, Mic } from 'lucide-react';
 interface EventItem {
   id: string;
   title: string;
-  category: 'Acoustic Sessions' | 'Open Mic Circle' | 'Tea Tasting';
+  category: string;
   date: string;
   time: string;
   location: string;
@@ -23,9 +23,9 @@ const EVENTS_LIST: EventItem[] = [
     time: '07:00 PM – 09:30 PM',
     location: 'Shaded Tree Deck',
     description: 'Soulful acoustic guitar, violin duos, and mellow indie vocals beneath warm hanging fairy lights and tree leaves.',
-    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=400&q=80',
     artist: 'Local Kerala Acoustic Artists',
-    badge: 'Weekly Gathering',
+    badge: 'Weekly Feature',
   },
   {
     id: 'e2',
@@ -35,7 +35,7 @@ const EVENTS_LIST: EventItem[] = [
     time: '06:30 PM Onwards',
     location: 'Main Tree Circle',
     description: 'Celebrating the birth of Twenteas Cafeteria with live unplugged classic covers, chai tastings, and warm community vibes.',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80',
     artist: 'Twenteas House Band',
     badge: 'Opening Night',
   },
@@ -47,7 +47,7 @@ const EVENTS_LIST: EventItem[] = [
     time: '05:30 PM – 08:00 PM',
     location: 'Garden Seating',
     description: 'An open, welcoming space for original Malayalam & English poetry, storytelling, acoustic songs, and shared laughter.',
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=400&q=80',
     artist: 'Open to All Community Voices',
     badge: 'Open Circle',
   },
@@ -59,7 +59,7 @@ const EVENTS_LIST: EventItem[] = [
     time: '11:00 AM – 12:30 PM',
     location: 'Brewing Counter',
     description: 'Immerse yourself in cold steeps, spiced infusions, and artisanal tea pairings guided by our master brewer.',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80',
     artist: 'Twenteas Tea Sommelier',
     badge: 'Monthly Journal',
   },
@@ -67,89 +67,92 @@ const EVENTS_LIST: EventItem[] = [
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-32 bg-[#1A110B] text-cream-100 relative hairline-b">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+    <section id="experience" className="py-24 sm:py-32 bg-[#1A110B] text-cream-100 relative hairline-b">
+      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        {/* Editorial Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 space-y-3">
           <div className="inline-flex items-center gap-2">
             <span className="w-6 h-[1px] bg-amber-500/50" />
-            <span className="text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
-              Events & Gathering Journal
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-amber-400/90 font-medium">
+              Gatherings Journal
             </span>
             <span className="w-6 h-[1px] bg-amber-500/50" />
           </div>
 
           <h2 className="font-serif-vintage text-4xl sm:text-5xl lg:text-6xl text-cream-100 font-normal">
-            Gatherings Under The Trees
+            Events & Music Journal
           </h2>
 
-          <p className="text-cream-100/70 text-base sm:text-lg font-light leading-relaxed">
-            Quiet music, open poetry circles, and tea tasting workshops beneath the canopy. Walk-in seats available for all sessions.
+          <p className="text-cream-100/70 text-xs sm:text-base font-light leading-relaxed">
+            Quiet music, open poetry circles, and tea tasting sessions under the trees. No boxed cards — just a seat for as long as you need it.
           </p>
         </div>
 
-        {/* Events Journal List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Minimal Printed Journal Entries (No Big Box Cards!) */}
+        <div className="space-y-0 hairline-t">
           {EVENTS_LIST.map((event) => (
             <div
               key={event.id}
-              className="group bg-[#140D08] rounded-2xl overflow-hidden hairline-border transition-all duration-500 hover:border-amber-500/40 flex flex-col justify-between"
+              className="py-8 sm:py-10 hairline-b group transition-colors hover:bg-cream-100/[0.02]"
             >
-              <div>
-                <div className="relative h-56 w-full overflow-hidden">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter saturate-90"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#140D08] via-transparent to-transparent opacity-80" />
-
-                  <span className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-amber-300 font-medium bg-[#140D08]/90 backdrop-blur-md px-3.5 py-1 rounded-full border border-amber-500/20">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                
+                {/* Date & Category Column */}
+                <div className="md:col-span-3 space-y-1.5">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-amber-400/90 font-mono font-medium block">
                     {event.badge}
                   </span>
+                  <div className="text-xs text-cream-100/90 font-medium flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                    <span>{event.date}</span>
+                  </div>
+                  <div className="text-[11px] text-cream-100/50 flex items-center gap-1.5">
+                    <Clock className="w-3 h-3 shrink-0" />
+                    <span>{event.time}</span>
+                  </div>
                 </div>
 
-                <div className="p-8 space-y-4">
-                  <h3 className="font-serif-vintage text-2xl sm:text-3xl text-cream-100 font-normal leading-snug group-hover:text-amber-300 transition-colors">
+                {/* Event Details Column */}
+                <div className="md:col-span-7 space-y-2.5">
+                  <h3 className="font-serif-vintage text-2xl sm:text-3xl text-cream-100 font-normal group-hover:text-amber-300 transition-colors leading-snug">
                     {event.title}
                   </h3>
 
-                  <p className="text-cream-100/70 text-xs sm:text-sm leading-relaxed font-light">
+                  <p className="text-cream-100/70 text-xs sm:text-sm font-light leading-relaxed">
                     {event.description}
                   </p>
 
-                  <div className="space-y-2 pt-2 text-xs text-cream-100/80 border-t border-cream-100/10">
-                    <div className="flex items-center gap-2.5 text-amber-300 font-medium">
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span>{event.date}</span>
+                  {event.artist && (
+                    <div className="flex items-center gap-2 text-xs text-amber-300/80 italic font-serif-vintage pt-1">
+                      <Mic className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <span>{event.artist}</span>
                     </div>
+                  )}
+                </div>
 
-                    <div className="flex items-center gap-2.5 text-cream-100/60">
-                      <Clock className="w-3.5 h-3.5" />
-                      <span>{event.time}</span>
-                    </div>
-
-                    {event.artist && (
-                      <div className="flex items-center gap-2.5 text-cream-100/60">
-                        <Mic className="w-3.5 h-3.5" />
-                        <span className="italic">{event.artist}</span>
-                      </div>
-                    )}
+                {/* Subtle Thumbnail Image Accent */}
+                <div className="md:col-span-2 hidden md:flex justify-end">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden hairline-border bg-[#140D08] shrink-0">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover filter saturate-80 group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
-              </div>
 
-              {/* Informative Walk-In Tag */}
-              <div className="p-8 pt-0">
-                <div className="w-full text-center text-xs font-mono tracking-widest text-amber-400/80 bg-amber-950/30 border border-amber-800/40 py-3 rounded-full uppercase">
-                  • Open Walk-in Gathering · No Queries Needed
-                </div>
               </div>
-
             </div>
           ))}
+        </div>
+
+        {/* Walk-in Footer Line */}
+        <div className="pt-12 text-center">
+          <p className="text-xs uppercase tracking-[0.25em] text-cream-100/40 font-mono">
+            • Open Walk-in Gathering · All Seats Under Trees Welcome
+          </p>
         </div>
 
       </div>
